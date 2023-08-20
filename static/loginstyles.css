@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  header, main, footer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+  }
+  
+  main {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form {
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .auth-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .auth-options button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-options button:first-child {
+    margin-right: 10px;
+  }
+  
+  .auth-options button:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .auth-options button.active {
+    background-color: #ccc;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+
+  #forname{
+    display: inline;
+  }
+  
+  label {
+    display: inline;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid dodgerblue;
+    background-color: #f2f2f2;
+    width: 100%;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0069d9;
+  }
+
+  button[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  footer {
+    background-color: #f2f2f2;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+  }  
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  main h2 {
+    margin-bottom: 20px;
+  }
+  
+  .course {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .course h3 {
+    margin-bottom: 10px;
+  }
+  
+  .course p {
+    margin-bottom: 20px;
+  }
+
+  a:link { 
+    text-decoration: none;
+    color: black;
+  }
+
+  #message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  
+  #message p {
+    padding: 10px 35px;
+    font-size: 18px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: red;
+  }

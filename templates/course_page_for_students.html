@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{t_uname}}'s {{crs.cname}}</title>
+    <link rel="stylesheet" type="text/css" href= {{ url_for('static', filename='loginstyles.css') }} />
+  </head>
+  <body>
+    <h1></h1>
+    <h1></h1>
+    <header>
+        <h1>Uploaded Items</h1>
+    </header>
+    <main>
+    {% if items %}
+        <b>Items::</b>
+        <br>
+        <br>
+        {% for f in items %}
+            <hr>
+            <img src="{{ url_for('static', filename='images/file.svg') }}" alt="file">
+            &nbsp;
+            <a href="{{url_for('download', filename = f.item_name)}}">{{f.item_name}}</a>
+            <hr>
+        {% endfor %}
+    {% else %}
+        No Item Here!
+    {% endif %}
+    </main>
+    <br><br>
+    <header>
+        <h1>Chat</h1>
+    </header>
+    <main>
+        {% if messeges %}
+        <hr>
+        {% for msg in messeges %}
+        {{msg.sender_name}} :  {{msg.messege_content}}
+        <br>
+        {% endfor %}
+        <hr>
+        {% endif %}
+    
+    <header>
+        <form action="{{url_for('sendMsg', cid=crs.id, uname=s_uname)}}" method="POST">
+            <textarea name="msgcontent"></textarea>
+            <input type="submit">
+        </form>
+    </header>
+    </main>
+
+    
+        <form action="/home" method="GET">
+            <div class="auth-options">
+                <button type="submit">Home</button>
+            </div>
+        </form>     
+    </body>
+</html>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome!{% endblock %}
+  
+{% block content %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='loginstyles.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='links.css')}}">
+  <h1></h1>
+  <h1></h1>
+  <header>
+    {% if msg %}
+    <h1>Hi, {{msg}}!</h1>
+    {% endif %}
+  </header>
+
+  <main>
+    {% if desg =='teacher' %}
+    
+      <div class="auth-options">
+        <button type="submit"><a href="{{url_for('create_courses')}}">Create Course</a></button>
+      </div>
+    
+            
+    <div id="course">
+      <br>
+      <h2>Your Courses::</h2>
+      {% for crs in crses %}
+      
+        <div class="course">
+          {{crs.cname}}
+          <div class="auth-options"><button><a href="{{url_for('upload', course_id=crs.id)}}">View Course</a></button></div>
+        </div>
+      
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if desg=='student' %}
+      <div id="course">
+        <br>
+          <h2>Enrolled Courses</h2>
+          {% if enr_crses %}
+              {% for e in enr_crses %}
+              
+                  <div class="course">
+                    {{e.cname}} by {{e.teacher_uname}}
+                    <div class="auth-options"><button><a href="{{url_for('viewcontents', course_id=e.id)}}">View Course</a></button></div>
+                  </div>
+                
+              {% endfor %}
+      </div>
+      {% else %}
+      <p>No courses enrolled.</p>
+      {% endif%}
+      <br>
+      <h2>Available Courses</h2>
+            
+      {% if rem_crses %}
+        {% for crs in rem_crses %}
+        
+          <div class="course">
+            {{crs.cname}} by {{crs.teacher_uname}}
+            <div class="auth-options"><button><a href="{{url_for('enroll', course_id = crs.id)}}">Enroll Now!</a></button></div>
+          </div>
+        
+        {% endfor %}
+      {% else %}
+        <p>No courses available.</p>
+      {% endif %}
+    {% endif %}
+    </main>
+{% endblock %}

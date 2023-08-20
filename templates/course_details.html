@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{crs.teacher_uname}}'s {{crs.cname}}</title>
+        <link rel="stylesheet" type="text/css" href= {{ url_for('static', filename='loginstyles.css') }} />
+    </head>
+    <body>
+        <h1></h1>
+        <h1></h1>
+        <header>
+            <h1>Course Details</h1>
+        </header>
+        <main>
+            <div class="course">
+                <h1>Course Name :: {{crs.cname}}</h1>
+                <h1>Intructor :: {{crs.teacher_uname}}</h1>
+                <h1>Description :: {{crs.cdesc}}</h1>
+            </div>
+        </main>
+        <form action="{{url_for('enroll', course_id=crs.id)}}" method="post">
+            <div class="auth-options">
+                <button type="submit">Enroll Now!</button>
+            </div>
+        </form>
+    </body>
+</html>

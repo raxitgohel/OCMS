@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Course</title>
+  </head>
+  <body>
+    <h1></h1>
+    <h1></h1>
+    <link rel="stylesheet" type="text/css" href= {{ url_for('static', filename='loginstyles.css') }} />
+    <header>
+      <h1>Create New Course</h1>
+    </header>
+    <main>
+      <form action="/create_courses" method="POST">
+        <div>
+          <label for="cname">Title:</label>
+          <input type="text" name="cname" id="cname" required>
+        </div>
+        <br>
+        <div>
+          <label for="cdesc">Description:</label>
+          <input type="text" name="cdesc" id="cdesc" required>
+        </div>
+        <br>
+        <div class="auth-options" >
+          <button type="submit">Create</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
